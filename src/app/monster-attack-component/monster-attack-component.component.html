@@ -1,0 +1,51 @@
+<section class="row">
+	<div class="col-md-6">
+		<h1 class="text-center">YOU</h1>
+		<label *ngFor="let item of showHeal" style="color:green">+{{item}}</label>
+		<label *ngFor="let item of showDamageMonster">-{{item}}</label>
+		<div class="healthbar">
+			<div class="healthbar text-center" style="background-color: green; margin: 0; color: white;"
+				[ngStyle]="{width: healthPlayer + '%', backgroundColor: healthPlayer < 30 ? 'red' : 'green'}">
+				{{healthPlayer}}
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<h1 class="text-center">MONSTER</h1>
+		<label *ngFor="let item of showDamagePlayer">-{{item}}</label>
+		<div class="healthbar">
+			<div class="healthbar text-center" style="margin: 0; color: white;"
+				[ngStyle]="{width: healthMonster + '%', backgroundColor: healthMonster < 30 ? 'red' : 'green'}">
+				{{healthMonster}}
+			</div>
+		</div>
+	</div>
+</section>
+<section class="row controls" *ngIf="!isRunning">
+	<div class="col-xs-12">
+		<button class="btn btn-primary" (click)="startGame()">START NEW GAME</button>
+	</div>
+</section>
+<section class="row controls" *ngIf="isRunning">
+	<div class="col-xs-12">
+		<button class="btn btn-danger" (click)="attack()">ATTACK</button>
+		<button class="btn btn-warning" 
+			(click)="specialAttack()"
+			[disabled]="disableSpecialAttack">SPECIAL ATTACK</button>
+		<button class="btn btn-success"
+		(click)="heal()" 
+		[disabled]="disableHeal || disableHeal2">HEAL</button>
+		<button class="btn btn-default" (click)="giveUp()">GIVE UP</button>
+	</div>
+</section>
+<section class="row log" *ngIf="logs.length > 0">
+	<div class="col-xs-12">
+		<ul>
+			<li *ngFor="let log of logs">
+				<p class="healLog">{{log.textHeal}}</p>
+				<p class="playerLog">{{log.textPlayer}}</p>
+				<p class="monsterLog">{{log.textMonster}}</p>
+			</li>
+		</ul>
+	</div>
+</section>

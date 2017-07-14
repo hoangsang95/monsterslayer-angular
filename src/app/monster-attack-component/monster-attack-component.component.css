@@ -1,0 +1,78 @@
+section{
+    margin: 0 120px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.healthbar {
+    width: 80%;
+    height: 40px;
+    background-color: #eee;
+    margin: auto;
+    transition: width 500ms;
+}
+
+.controls, .log {
+    margin-top: 30px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 3px 6px #ccc;
+}
+
+
+
+.log ul {
+    list-style: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.log ul li {
+    margin: 5px;
+}
+
+
+.log p{
+    font-size: 20px;
+}
+
+
+.playerLog{
+    color: blue;
+    background-color: #e4e8ff;
+}
+
+.monsterLog {
+    color: red;
+    background-color: #ffc0c1;
+}
+
+.healLog{
+    color: green;
+    background-color: #cff9d1;
+}
+
+label{
+    left: 170px;
+	opacity: 0;
+	position: absolute;
+	font-size: 2em;
+	color: red;
+    animation: fade 1s ease-in;
+    top: 20px;
+   
+}
+
+@keyframes fade{
+	from{
+		opacity: 0;
+		transform: translateY(0);
+	}
+	to{
+		opacity: 1;
+		transform: translateY(-20px);
+	}
+}
