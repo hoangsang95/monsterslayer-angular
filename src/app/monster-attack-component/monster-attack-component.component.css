@@ -1,5 +1,9 @@
 section{
-    margin: 0 120px;
+    margin: 0 110px;
+}
+
+.log ul{
+    padding: 0;
 }
 
 .text-center {
@@ -56,7 +60,7 @@ section{
 }
 
 label{
-    left: 170px;
+    left: 20%;
 	opacity: 0;
 	position: absolute;
 	font-size: 2em;

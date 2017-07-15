@@ -60,6 +60,7 @@ export class MonsterAttackComponentComponent implements OnInit {
 
 
 	specialAttack() {
+		this.checkWin();
 		let playerHitMonster: any = this.randomDamage(10, 18);
 		let monsterHitPlayer = this.monsterHitPlayer();
 		this.healthMonster -= playerHitMonster;
